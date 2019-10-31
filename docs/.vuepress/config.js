@@ -82,7 +82,7 @@ module.exports = {
     },
     // 密钥
     keyPage: {
-      keys: ['123456'],
+      keys: [''],
       color: '#42b983', // 登录页动画球的颜色
       lineColor: '#42b983', // 登录页动画线的颜色
     },
