@@ -1,94 +1,103 @@
 module.exports = {
-  chainWebpack: (config, isServer) => {
-    // config 是 ChainableConfig 的一个实例
-    // config.output('');
-  },
-  configureWebpack: (config, isServer) => {
-    // console.log(config);
-    // config.assetsPublicPath = '';
-    // if (!isServer) {
-    //   // 修改客户端的 webpack 配置
-    // }
-  },
-  'title': 'blob',
-  'description': 'blob',
-  'dest': 'public',
-  'head': [
+  "title": "sleep",
+  "description": "what's up",
+  "dest": "public",
+  "head": [
     [
-      'link',
+      "link",
       {
-        'rel': 'icon',
-        'href': '/favicon.ico',
-      },
+        "rel": "icon",
+        "href": "/favicon.ico"
+      }
     ],
     [
-      'meta',
+      "meta",
       {
-        'name': 'viewport',
-        'content': 'width=device-width,initial-scale=1,user-scalable=no',
-      },
-    ],
+        "name": "viewport",
+        "content": "width=device-width,initial-scale=1,user-scalable=no"
+      }
+    ]
   ],
-  'theme': 'reco',
-  'themeConfig': {
-    'nav': [
+  "theme": "reco",
+  "themeConfig": {
+    "nav": [
       {
-        'text': 'Home',
-        'link': '/',
-        'icon': 'reco-home',
+        "text": "Home",
+        "link": "/",
+        "icon": "reco-home"
       },
       {
-        'text': 'TimeLine',
-        'link': '/timeLine/',
-        'icon': 'reco-date',
+        "text": "TimeLine",
+        "link": "/timeline/",
+        "icon": "reco-date"
       },
       {
-        'text': 'Contact',
-        'icon': 'reco-message',
-        'items': [
-          // {
-          //   "text": "NPM",
-          //   "link": "https://www.npmjs.com/~reco_luan",
-          //   "icon": "reco-npm"
-          // },
-        ],
+        "text": "Contact",
+        "icon": "reco-message",
+        "items": [
+          {
+            "text": "GitHub",
+            "link": "https://github.com/zhairuihao",
+            "icon": "reco-github"
+          }
+        ]
+      }
+    ],
+    "type": "blog",
+    "blogConfig": {
+      "category": {
+        "location": 2,
+        "text": "Category"
+      },
+      "tag": {
+        "location": 3,
+        "text": "Tag"
+      }
+    },
+    "friendLink": [
+      {
+              "title": "github",
+              "desc": "github 主页地址",
+              "avatar": "https://avatars1.githubusercontent.com/u/18378213?s=460&u=c67240e3260765429f5a63e27d3d5be674edc2b4&v=4",
+              "link": "https://github.com/zhairuihao"
+      },
+      {
+        "title": "午后南杂",
+        "desc": "Enjoy when you can, and endure when you must.",
+        "email": "1156743527@qq.com",
+        "link": "https://www.recoluan.com"
+      },
+      {
+        "title": "vuepress-theme-reco",
+        "desc": "A simple and beautiful vuepress Blog & Doc theme.",
+        "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+        "link": "https://vuepress-theme-reco.recoluan.com"
       },
     ],
-    'type': 'blog',
-    'blogConfig': {
-      'category': {
-        'location': 2,
-        'text': 'Category',
-      },
-      'tag': {
-        'location': 3,
-        'text': 'Tag',
-      },
-    },
-    'logo': '/head.png',
-    'search': true,
-    'searchMaxSuggestions': 10,
-    'sidebar': 'auto',
-    'lastUpdated': 'Last Updated',
-    'author': 'zhairuihao',
-    'record': 'xxxx',
-    'startYear': '2017',
-    vssueConfig: {
-      platform: 'github',
-      owner: 'zhairuihao',
-      repo: 'vuepress-reco',
-      clientId: '4eeb9cd2f7249af6d11e',
-      clientSecret: 'abe80266714d4500634a99e7dcb7ca9feaf448c8',
-    },
-    // 密钥
-    keyPage: {
-      keys: [''],
-      color: '#42b983', // 登录页动画球的颜色
-      lineColor: '#42b983', // 登录页动画线的颜色
-    },
-
+    "logo": "/logo.png",
+    "search": true,
+    "searchMaxSuggestions": 10,
+    "sidebar": "auto",
+    "lastUpdated": "Last Updated",
+    "author": "zhairuihao",
+    "authorAvatar": "https://avatars1.githubusercontent.com/u/18378213?s=460&u=c67240e3260765429f5a63e27d3d5be674edc2b4&v=4",
+    "record": "xxxx",
+    "startYear": "2020",
+     vssueConfig: {
+          platform: 'github',
+          owner: 'zhairuihao',
+          repo: 'vuepress-reco',
+          clientId: '4eeb9cd2f7249af6d11e',
+          clientSecret: 'abe80266714d4500634a99e7dcb7ca9feaf448c8',
+        },
+        // 密钥
+        keyPage: {
+          keys: ['c4ca4238a0b923820dcc509a6f75849b'], //md5 32位小写 1
+          color: '#42b983', // 登录页动画球的颜色
+          lineColor: '#42b983', // 登录页动画线的颜色
+        },
   },
-  'markdown': {
-    'lineNumbers': true,
-  },
-};
+  "markdown": {
+    "lineNumbers": true
+  }
+}
