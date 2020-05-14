@@ -5,7 +5,7 @@ script:
   - npm run build
 deploy:
   provider: pages
-  skip-cleanup: true
+  skip-cleanup: false
   local_dir: html # 项目打包后生成的文件的目录
   github-token: $GITHUB_TOKEN # 这里这个变量就是刚才配置 token 时填写的那个变量
   keep-history: true
