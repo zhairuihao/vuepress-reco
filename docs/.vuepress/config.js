@@ -1,7 +1,7 @@
 module.exports = {
   "title": "sleep",
   "description": "what's up",
-  "dest": "public",
+  "dest": "html",
   "head": [
     [
       "link",
