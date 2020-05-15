@@ -24,15 +24,11 @@ script:
 - git push -f https://${GITHUB_TOKEN}@github.com/zhairuihao/zhairuihao.github.io.git
   master
 before_deploy:
-  - openssl aes-256-cbc -k ahduQu9ushou0Rowqeqweqweqweqweh -in $TRAVIS_BUILD_DIR/deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
-  # 其次，-out 后面自动生成的是 ~\/.ssh/id_rsa，要把 \ 去掉，否则会编译失败
-  # - openssl aes-256-cbc -K $encrypted_94ff7340745c_key -iv $encrypted_94ff7340745c_iv -in deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
-  # 开启 ssh-agent，即允许使用 ssh 命令
-  - eval "$(ssh-agent -s)"
-  # 给予 id_rsa 文件权限，避免警告
-  - chmod 600 ~/.ssh/deploy_rsa
-  # 将私钥添加到 ssh
-  - ssh-add ~/.ssh/deploy_rsa
+- openssl aes-256-cbc -k aasd5asdas6d59as8da+sd-qw4e-a4sd54 -in $TRAVIS_BUILD_DIR/deploy_rsa.enc
+  -out ~/.ssh/deploy_rsa -d
+- eval "$(ssh-agent -s)"
+- chmod 600 ~/.ssh/deploy_rsa
+- ssh-add ~/.ssh/deploy_rsa
 deploy:
   provider: script
   skip_cleanup: true
@@ -41,4 +37,5 @@ deploy:
     branch: master
 env:
   global:
-    secure: EN2ha3ME0d7rwACposd2uuN9lvOEgqfFC+IBJRzjDdK3UEXRd/9Qs59VsxE6K4wk6iBX/zbBkSA3+VjuoZcEPDykjNeVMBSwnHNDMOcUQkDsQeYAR43eD7+TXWxTzQZtM7Q8ULup0AVGobFfHXJxTFzFGec4smFmLKKGeqPNHjJ3GHQD6bs0BfhLg8nw8Y8DTvs2S1DKK7ye3kyUkPyjmPQYBuEBN3BI1OVWpuQvdzrM5MZdvnaNkhhjc04wxJ4xDp4gqqTllM1tEMw5/5GkpsNyrP6/SyBSk/Kc1JB0fzOFBM8yhbt5ZNNi/dEMfjI9EkHOK7BPC+2rn6gw+QmeqsITrL/6bl6IgZu8TT9Gj4YriwY3klh2a99NtiTpUrM4AyD0wDkOBTr2myVwmcgQ4irIL0dZowjgu2WTc9oXuyJwxWWN48TVllurM8ONjpbXcj7mib9rL3hC3Md8nqIefExWSp3SWwz53WC6ZpPhTxJpSIDO1PkuzWATlggc9+/9SZWW8FoeDL8YOBAQqiVfi0G9TBkbg35aReu5lKNnEFeEeWEAb6W9Yb/KvmwIOfL82XpzRh1yqnIdUV1ah3yoJVSFSh700Tez3DT4YvJJIZ8RFox+5Rtnw+vXrhekdz893pnB6EiBgoqhOpv7yR3B1ihLdMbH7rYymC0FggEdoFw=
+  - secure: EN2ha3ME0d7rwACposd2uuN9lvOEgqfFC+IBJRzjDdK3UEXRd/9Qs59VsxE6K4wk6iBX/zbBkSA3+VjuoZcEPDykjNeVMBSwnHNDMOcUQkDsQeYAR43eD7+TXWxTzQZtM7Q8ULup0AVGobFfHXJxTFzFGec4smFmLKKGeqPNHjJ3GHQD6bs0BfhLg8nw8Y8DTvs2S1DKK7ye3kyUkPyjmPQYBuEBN3BI1OVWpuQvdzrM5MZdvnaNkhhjc04wxJ4xDp4gqqTllM1tEMw5/5GkpsNyrP6/SyBSk/Kc1JB0fzOFBM8yhbt5ZNNi/dEMfjI9EkHOK7BPC+2rn6gw+QmeqsITrL/6bl6IgZu8TT9Gj4YriwY3klh2a99NtiTpUrM4AyD0wDkOBTr2myVwmcgQ4irIL0dZowjgu2WTc9oXuyJwxWWN48TVllurM8ONjpbXcj7mib9rL3hC3Md8nqIefExWSp3SWwz53WC6ZpPhTxJpSIDO1PkuzWATlggc9+/9SZWW8FoeDL8YOBAQqiVfi0G9TBkbg35aReu5lKNnEFeEeWEAb6W9Yb/KvmwIOfL82XpzRh1yqnIdUV1ah3yoJVSFSh700Tez3DT4YvJJIZ8RFox+5Rtnw+vXrhekdz893pnB6EiBgoqhOpv7yR3B1ihLdMbH7rYymC0FggEdoFw=
+  - secure: nwxmpAWVTbuVobcqj50fPKwrXkNg8zslMWIrws+x/JflzIKD8OuZFUIYbk+RDMhbFcd53tAv1fW2eOeS/l/qWDI9DPdRNogDGUfVLxbcWj2G/0dtpTauCUy0YN/NhVgsC0ARrWCxtBdsU2RP2tEu25DD9c3ncx/uZcIA2g7/wWQYObshYmcobFSNyRMsY0Rwr4AoLtzXkCeGkJytp82AfOvzH3+1vxc7enWIM58qlVE/efa9oP+ij7rC18NyOnZK8RZdEiPA1H6e1v+aQljZ+ixmwOOhT3sCpy1N1Voqa0iy7CVZ2Tn4S+NuHyCriTN59+y/rPBIVseaJtHZKLOHAfUrfi5z0WEdQAe+QV3TzhNcNE9ZOT8sjqpvwaSy7l1+g4viJPM4bdEQr9DzLN+DomB5DIPKT5ltr5SGNixe0RcN0IVAhkR9kAW0OuSPbwvQu7X8seiKiEm0DWspwsPZuyOQNz9y5sk2k18CouIbjIhJ5W/+C3wNesa6eNq7vymbR0uWjE+txN7JpHNpQ6PgdkGazxk/mb+iOJsFN0JhvPzbIJN46kPQOHl+dqfVoLLEBinCUu+haUPyjSWJzvTIv6kjDwqkhWfCBhOMy0vI1x8yqpVOWdSzCO34dl2QT+uLv+9Tza3kQKk39wZD/XOUh2jgVXWF3cYIopzPr61YYAU=
