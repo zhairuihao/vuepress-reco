@@ -101,5 +101,5 @@ module.exports = {
     "markdown": {
         "lineNumbers": true
     },
-    frontmatter: {bgImage: "/home-bg.jpg"}
+    "frontmatter": {"bgImage": "/home-bg.jpg"}
 }
