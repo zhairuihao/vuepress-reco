@@ -31,8 +31,8 @@ before_deploy:
 - ssh-add ~/.ssh/deploy_rsa
 deploy:
   provider: script
-  skip_cleanup: true
-  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/html root@47.103.209.220:/root/data/docker/nginx/html
+  skip_cleanup: false
+  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/html root@47.103.209.220:/root/data/docker/nginx/
   on:
     branch: master
 env:

@@ -91,11 +91,11 @@ module.exports = {
           clientSecret: 'abe80266714d4500634a99e7dcb7ca9feaf448c8',
         },
         // 密钥
-        keyPage: {
-          keys: ['c4ca4238a0b923820dcc509a6f75849b'], //md5 32位小写 1
-          color: '#42b983', // 登录页动画球的颜色
-          lineColor: '#42b983', // 登录页动画线的颜色
-        },
+//        keyPage: {
+//          keys: ['c4ca4238a0b923820dcc509a6f75849b'], //md5 32位小写 1
+//          color: '#42b983', // 登录页动画球的颜色
+//          lineColor: '#42b983', // 登录页动画线的颜色
+//        },
   },
   "markdown": {
     "lineNumbers": true
