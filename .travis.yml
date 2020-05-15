@@ -12,7 +12,7 @@ cache:
   directories:
   - node_modules
 before_install:
-  - openssl aes-256-cbc -k "$ssh_pwd" -in deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
+  - openssl aes-256-cbc -k ahduQu9ushou0Rowqeqweqweqweqweh -in deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
   # 其次，-out 后面自动生成的是 ~\/.ssh/id_rsa，要把 \ 去掉，否则会编译失败
   # - openssl aes-256-cbc -K $encrypted_94ff7340745c_key -iv $encrypted_94ff7340745c_iv -in deploy_rsa.enc -out ~/.ssh/deploy_rsa -d
   # 开启 ssh-agent，即允许使用 ssh 命令
