@@ -24,7 +24,7 @@ script:
 - git push -f https://${GITHUB_TOKEN}@github.com/zhairuihao/zhairuihao.github.io.git
   master
 before_deploy:
-- openssl aes-256-cbc -k aasd5asdas6d59as8da+sd-qw4e-a4sd54 -in $TRAVIS_BUILD_DIR/deploy_rsa.enc
+- openssl aes-256-cbc -k ${SSH_PWD} -in $TRAVIS_BUILD_DIR/deploy_rsa.enc
   -out ~/.ssh/deploy_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 ~/.ssh/deploy_rsa
