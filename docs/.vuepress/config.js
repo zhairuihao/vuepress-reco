@@ -79,13 +79,17 @@ module.exports = {
         "authorAvatar": "/avatar.jpg",
         "record": "1.2.3.4",
         "startYear": "2020",
-        vssueConfig: {
-            platform: 'github',
-            owner: 'zhairuihao',
-            repo: 'vuepress-reco',
-            clientId: '4eeb9cd2f7249af6d11e',
-            clientSecret: 'abe80266714d4500634a99e7dcb7ca9feaf448c8',
-        },
+        // vssueConfig: {
+        //     platform: 'github',
+        //     owner: 'zhairuihao',
+        //     repo: 'vuepress-reco',
+        //     clientId: '4eeb9cd2f7249af6d11e',
+        //     clientSecret: 'abe80266714d4500634a99e7dcb7ca9feaf448c8',
+        // },
+        valineConfig: {
+            appId: '6ebOChfHw45AFr9BSyg79TF0-gzGzoHsz',// your appId
+            appKey: 'b2FAr6adnShjHKnMjRAffspz', // your appKey
+        }
         // 密钥
 //        keyPage: {
 //          keys: ['c4ca4238a0b923820dcc509a6f75849b'], //md5 32位小写 1
