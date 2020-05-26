@@ -89,6 +89,7 @@ module.exports = {
         valineConfig: {
             appId: '6ebOChfHw45AFr9BSyg79TF0-gzGzoHsz',// your appId
             appKey: 'b2FAr6adnShjHKnMjRAffspz', // your appKey
+            visitor: true // 阅读量统计
         }
         // 密钥
 //        keyPage: {
