@@ -23,7 +23,7 @@ tags:
 
 ```
 
-import java.io.IOException;
+importJava.io.IOException;
 
 import org.msgpack.MessagePack;
 import org.springframework.data.redis.serializer.RedisSerializer;

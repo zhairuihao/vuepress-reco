@@ -25,7 +25,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 
 <br>只要把不同的函数（以及记录状态的变量）简单地放在一起，就算是一个模块。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	function m1(){
 		//...
@@ -43,7 +43,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 
 <br>为了解决上面的缺点，可以把模块写成一个对象，所有的模块成员都放到这个对象里面。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	var module1 = new Object({
 		_count : 0,
@@ -59,7 +59,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 
 <br>上面的函数m1()和m2(），都封装在module1对象里。使用的时候，就是调用这个对象的属性。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 	  
 	module1.m1();
 
@@ -67,7 +67,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 
 <br>但是，这样的写法会暴露所有模块成员，内部状态可以被外部改写。比如，外部代码可以直接改变内部计数器的值。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
     module1._count = 5;
 
@@ -76,7 +76,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 ### 三、立即执行函数写法
 <br>使用"立即执行函数"（Immediately-Invoked Function Expression，IIFE），可以达到不暴露私有成员的目的。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	var module1 = (function(){
 		var _count = 0;
@@ -96,7 +96,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 
 <br>使用上面的写法，外部代码无法读取内部的_count变量。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	console.info(module1._count); //undefined
 
@@ -108,7 +108,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 
 <br>如果一个模块很大，必须分成几个部分，或者一个模块需要继承另一个模块，这时就有必要采用"放大模式"（augmentation）。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	var module1 = (function (mod){
 		mod.m3 = function () {
@@ -125,7 +125,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 
 <br>在浏览器环境中，模块的各个部分通常都是从网上获取的，有时无法知道哪个部分会先加载。如果采用上一节的写法，第一个执行的部分有可能加载一个不存在空对象，这时就要采用"宽放大模式"。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 	
 	var module1 = ( function (mod){
 		//...
@@ -140,7 +140,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 独立性是模块的重要特点，模块内部最好不与程序的其他部分直接交互。
 为了在模块内部调用全局变量，必须显式地将其他变量输入模块。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	var module1 = (function ($, YAHOO) {
 		//...
@@ -162,7 +162,7 @@ Javascript社区做了很多努力，在现有的运行环境中，实现"模块
 这标志"Javascript模块化编程"正式诞生。因为老实说，在浏览器环境下，没有模块也不是特别大的问题，毕竟网页程序的复杂性有限；但是在服务器端，一定要有模块，与操作系统和其他应用程序互动，否则根本没法编程。
 node.js的模块系统，就是参照CommonJS规范实现的。在CommonJS中，有一个全局性方法require()，用于加载模块。假定有一个数学模块math.js，就可以像下面这样加载。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	var math = require('math');
 	math.add(2,3); // 5
@@ -184,7 +184,7 @@ node.js的模块系统，就是参照CommonJS规范实现的。在CommonJS中，
 <br>AMD是"Asynchronous Module Definition"的缩写，意思就是"异步模块定义"。它采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。
 AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两个参数：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	require([module], callback);
 
@@ -192,7 +192,7 @@ AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两
 
 <br>第一个参数[module]，是一个数组，里面的成员就是要加载的模块；第二个参数callback，则是加载成功之后的回调函数。如果将前面的代码改写成AMD形式，就是下面这样：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	require(['math'], function (math) {
 	　　　　math.add(2, 3);
@@ -208,7 +208,7 @@ AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两
 <br>使用require.js的第一步，是先去官方网站[下载](http://requirejs.org/docs/download.html)最新版本。
 下载后，假定把它放在js子目录下面，就可以加载了。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	<script src="js/require.js"></script>
 
@@ -216,7 +216,7 @@ AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两
 
 <br>有人可能会想到，加载这个文件，也可能造成网页失去响应。解决办法有两个，一个是把它放在网页底部加载，另一个是写成下面这样：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	<script src="js/require.js" defer async="true" ></script>
 
@@ -225,7 +225,7 @@ AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两
 <br>async属性表明这个文件需要异步加载，避免网页失去响应。IE不支持这个属性，只支持defer，所以把defer也写上。
 加载require.js以后，下一步就要加载我们自己的代码了。假定我们自己的代码文件是main.js，也放在js目录下面。那么，只需要写成下面这样就行了：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	<script src="js/require.js" data-main="js/main"></script>
 
@@ -239,7 +239,7 @@ AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两
 下面就来看，怎么写main.js。
 如果我们的代码不依赖任何其他模块，那么可以直接写入javascript代码。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 	
 	// main.js
 	alert("加载成功！");
@@ -248,7 +248,7 @@ AMD也采用require()语句加载模块，但是不同于CommonJS，它要求两
 
 <br>但这样的话，就没必要使用require.js了。真正常见的情况是，主模块依赖于其他模块，这时就要使用AMD规范定义的的require()函数。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	// main.js
 	require(['moduleA', 'moduleB', 'moduleC'], function (moduleA, moduleB, moduleC){
@@ -262,7 +262,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 下面，我们看一个实际的例子。
 假定主模块依赖jquery、underscore和backbone这三个模块，main.js就可以这样写：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 	
 	require(['jquery', 'underscore', 'backbone'], function ($, _, Backbone){
 		// some code here　　
@@ -277,7 +277,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 使用require.config()方法，我们可以对模块的加载行为进行自定义。require.config()就写在主模块（main.js）的头部。参数就是一个对象，这个对象的paths属性指定各个模块的加载路径。
 
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	require.config({
 	　　　　paths: {
@@ -291,7 +291,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 <br> 上面的代码给出了三个模块的文件名，路径默认与main.js在同一个目录（js子目录）。如果这些模块在其他目录，比如js/lib目录，则有两种写法。一种是逐一指定路径。另一种则是直接改变基目录（baseUrl）。
 如果某个模块在另一台主机上，也可以直接指定它的网址，比如：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	require.config({
 	　　　　paths: {
@@ -326,7 +326,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 具体来说，就是模块必须采用特定的define()函数来定义。如果一个模块不依赖其他模块，那么可以直接定义在define()函数之中。
 假定现在有一个math.js文件，它定义了一个math模块。那么，math.js就要这样写：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	// math.js
 	　　define(function (){
@@ -342,7 +342,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 
 <br>加载方法如下：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 	
 	// main.js
 	require(['math'], function (math){
@@ -353,7 +353,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 
 <br>如果这个模块还依赖其他模块，那么define()函数的第一个参数，必须是一个数组，指明该模块的依赖性。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	define(['myLib'], function(myLib){
 		function foo(){
@@ -374,7 +374,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 举例来说，underscore和backbone这两个库，都没有采用AMD规范编写。如果要加载它们的话，必须先定义它们的特征。
 
 
-{% highlight javascript %}
+{% highlightJavascript %}
 	require.config({
 	　　　　shim: {
 	　　　　　　'underscore':{
@@ -391,7 +391,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 <br>require.config()接受一个配置对象，这个对象除了有前面说过的paths属性之外，还有一个shim属性，专门用来配置不兼容的模块。具体来说，每个模块要定义（1）exports值（输出的变量名），表明这个模块外部调用时的名称；（2）deps数组，表明该模块的依赖性。
 比如，jQuery的插件可以这样定义：
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	　shim: {
 	　　　　'jquery.scroll': {
@@ -406,7 +406,7 @@ require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应�
 <br>require.js还提供一系列插件，实现一些特定的功能。
 domready插件，可以让回调函数在页面DOM结构加载完成后再运行。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	require(['domready!'], function (doc){
 	　　　　// called once the DOM is ready
@@ -415,7 +415,7 @@ domready插件，可以让回调函数在页面DOM结构加载完成后再运行
 
 <br>text和image插件，则是允许require.js加载文本和图片文件。
 
-{% highlight javascript %}
+{% highlightJavascript %}
 
 	define([
 	　　　　'text!review.txt',
