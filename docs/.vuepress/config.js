@@ -1,7 +1,6 @@
 module.exports = {
-    "title": "万事不如杯在手,一年几见月当头",
-    "description": "who else em ?\n"
-    ,
+    "title": "没得标题🙂",
+    "description": "know more and do better",
     "dest": "html",
     "head": [
         [
