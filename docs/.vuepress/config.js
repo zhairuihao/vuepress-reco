@@ -77,7 +77,9 @@ module.exports = {
         "lastUpdated": "Last Updated",
         "author": "zhairuihao",
         "authorAvatar": "/avatar.jpg",
-        "record": "1.2.3.4",
+        // 备案号
+        record: '陇ICP备20001916号',
+        recordLink: 'http://www.beian.miit.gov.cn/',
         "startYear": "2020",
         // vssueConfig: {
         //     platform: 'github',
