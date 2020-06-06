@@ -1,5 +1,5 @@
 module.exports = {
-    "title": "没得标题🙂",
+    "title": "zhairuihao的blog",
     "description": "know more and do better",
     "dest": "html",
     "head": [
