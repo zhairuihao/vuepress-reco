@@ -44,7 +44,7 @@ module.exports = {
                     },
                     {
                         "text": "我的故事",
-                        "link":"http://zhairuihao.show/my-story/index.html",
+                        "link": "http://zhairuihao.show/my-story/index.html",
                         "icon": "reco-other"
                     }
                 ]
@@ -66,13 +66,13 @@ module.exports = {
                 "title": "xy的设计素材",
                 "desc": "A simple material site.",
                 "link": "http://xy.zhairuihao.show",
-                "email":"123.qq.com"
+                "email": "123.qq.com"
             },
             {
                 "title": "小郭子blog",
                 "desc": "小郭子blog",
                 "link": "https://www.cnblogs.com/gxr-tygy",
-                "email":"123.qq.com"
+                "email": "123.qq.com"
             },
             {
                 "title": "午后南杂",
@@ -92,6 +92,7 @@ module.exports = {
         "search": true,
         "searchMaxSuggestions": 10,
         "sidebar": "auto",
+        "sidebarDepth": 2,
         "lastUpdated": "Last Updated",
         "author": "zhairuihao",
         "authorAvatar": "/avatar.jpg",

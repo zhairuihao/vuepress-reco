@@ -12,9 +12,9 @@ categories:
 [thumbnailator 传送门](https://github.com/coobird/thumbnailator)
 > 记一次图片处理过程
 
-### thumbnailator 功能
+## thumbnailator 功能
 
-#### 1. 从现有图像创建高质量的缩略图   
+### 1. 从现有图像创建高质量的缩略图   
 
 ```java
 BufferedImage thumbnail = Thumbnails.of(originalImage)
@@ -26,7 +26,7 @@ Thumbnails.of(new File("original.jpg"))
         .toFile(new File("thumbnail.jpg"));
 ```
 
-#### 2. 可以在缩略图中嵌入水印(例如徽标)   
+### 2. 可以在缩略图中嵌入水印(例如徽标)   
 
 ```java
 Thumbnails.of(new File("original.jpg"))
@@ -37,9 +37,9 @@ Thumbnails.of(new File("original.jpg"))
         .toFile(new File("image-with-watermark.jpg"));
 ```
 
-#### 3. 水印的透明度是可调的，从透明(0%)到不透明(100%)
+### 3. 水印的透明度是可调的，从透明(0%)到不透明(100%)
 
-#### 4. 支持图片旋转
+### 4. 支持图片旋转
 ```java
 BufferedImage originalImage = ImageIO.read(new File("original.jpg"));
 
@@ -48,9 +48,9 @@ BufferedImage thumbnail = Thumbnails.of(originalImage)
         .rotate(90)
         .asBufferedImage();
 ```
-#### 5. 编程过程简化
+### 5. 编程过程简化
 
-#### 6. 支持批量操作
+### 6. 支持批量操作
 ```java
 for (int i : new int[] {0, 90, 180, 270, 45}) {
     Thumbnails.of(new File("coobird.png"))
@@ -59,15 +59,15 @@ for (int i : new int[] {0, 90, 180, 270, 45}) {
             .toFile(new File("image-rotated-" + i + ".png"));
 }
 ```
-#### 7. 可直接操作网络图片
+### 7. 可直接操作网络图片
 ```java
 Thumbnails.of(new URL(card.getAvatarUrl()));
 ```
-### 扩展
+## 扩展
 
-#### 1.ImageFilter 的扩展
+### 1.ImageFilter 的扩展
 
-##### ImageFilter
+#### ImageFilter
 ```java
 public interface ImageFilter
 {
@@ -80,7 +80,7 @@ public interface ImageFilter
 	public BufferedImage apply(BufferedImage img);
 }
 ```
-##### 将图片转化为圆形
+#### 将图片转化为圆形
 ```java
   private static final ImageFilter CUT_CIRCLE =
       (bufferedImage) -> {
@@ -92,7 +92,7 @@ public interface ImageFilter
         return circleBuffer;
       };
 ```
-##### 使用方式
+#### 使用方式
 ```java
    BufferedImage avatar =
         Thumbnails.of(new URL(card.getAvatarUrl()))
@@ -101,8 +101,8 @@ public interface ImageFilter
             .asBufferedImage();
 ```
 
-###  2.Position 的扩展
-##### Position 源码
+##  2.Position 的扩展
+#### Position 源码
 ```java
 public interface Position
 {
@@ -134,7 +134,7 @@ public interface Position
 }
 
 ```
-##### 自动设置水平居中,使用时只需指定垂直高度
+#### 自动设置水平居中,使用时只需指定垂直高度
 ```java
 public static class Horizontally implements Position {
     private final int height;
