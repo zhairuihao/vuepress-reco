@@ -41,6 +41,11 @@ module.exports = {
                         "text": "GitHub",
                         "link": "https://github.com/zhairuihao",
                         "icon": "reco-github"
+                    },
+                    {
+                        "text": "我的故事",
+                        "link":"/my-story/index.html",
+                        "icon": "reco-other"
                     }
                 ]
             }
@@ -65,7 +70,8 @@ module.exports = {
             {
                 "title": "小郭子blog",
                 "desc": "小郭子blog",
-                "link": "https://www.cnblogs.com/gxr-tygy"
+                "link": "https://www.cnblogs.com/gxr-tygy",
+                "logo":"reco-bokeyuan"
             },
             {
                 "title": "午后南杂",
