@@ -44,7 +44,7 @@ module.exports = {
                     },
                     {
                         "text": "我的故事",
-                        "link":"/my-story/index.html",
+                        "link":"http://zhairuihao.show/my-story/index.html",
                         "icon": "reco-other"
                     }
                 ]
