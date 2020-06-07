@@ -65,13 +65,14 @@ module.exports = {
             {
                 "title": "xy的设计素材",
                 "desc": "A simple material site.",
-                "link": "http://xy.zhairuihao.show"
+                "link": "http://xy.zhairuihao.show",
+                "email":"123.qq.com"
             },
             {
                 "title": "小郭子blog",
                 "desc": "小郭子blog",
                 "link": "https://www.cnblogs.com/gxr-tygy",
-                "logo":"reco-bokeyuan"
+                "email":"123.qq.com"
             },
             {
                 "title": "午后南杂",
