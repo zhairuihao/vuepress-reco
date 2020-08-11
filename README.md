@@ -1,5 +1,5 @@
 # 技术博客 
-# ![传送门](http://zhairuihao.show)
+# [传送门](http://zhairuihao.show)
 # vuepress-theme-reco-demo
 
 Blog demo for vuepress-theme-reco
